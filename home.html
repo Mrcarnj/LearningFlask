@@ -1,0 +1,50 @@
+{% extends 'layout-template.html' %}  
+
+{%block content%}
+<head>
+  <style>
+    .header{
+        position:sticky;
+        top: 0 ;
+        text-align: center;
+    }
+    .data{
+        top: 0 ;
+        text-align: center;
+    }
+</style>
+<title>PGA Tour Leaderboard Scraper</title>
+<meta http-equiv="refresh" content="15"> 
+</head>
+<center>
+  <body>
+    <br>
+    <br>
+    <br>
+    <h1>This website will scrape the PGA Tour Leaderboard from ESPN</h1>
+    <p>Welcome to this Webscraper - it will display scraped data here</p>
+    <br>
+    <div class="w3-card-4" style="width:75%; height: 500px; overflow-y: auto;" >
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+             <th class="header" scope="col">Position</th>
+             <th class="header" scope="col">Golfer</th>
+             <th class="header" scope="col">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for element in data%}
+            <tr>
+              <th class="data" scope="row">{{element[0]}}</th>
+              <td class="data">{{element[1]}}</td>
+              <td class="data">{{element[2]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+  </div>
+  {% endblock %}  
+  </body>
+</center>
+</html>
