@@ -7,7 +7,7 @@ import os
 
 
 while True:
-    url = 'https://www.espn.com/golf/leaderboard/_/tournamentId/401465506'
+    url = 'https://www.espn.com/golf/leaderboard'
     req = requests.get(url)
     bsObj=BeautifulSoup(req.text,'lxml')
 
